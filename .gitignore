@@ -20,3 +20,5 @@ test-blockchain/start.sh
 contractAddresses.json
 
 tenderly.yaml
+
+inputs/

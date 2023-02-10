@@ -127,5 +127,5 @@ module.exports = {
     bscscan: ''
   },
 
-  plugins: ['truffle-plugin-verify']
+  plugins: ['truffle-plugin-verify','truffle-plugin-stdjsonin']
 }

@@ -84,6 +84,7 @@
     "solium": "^1.2.5",
     "truffle": "^5.4.15",
     "truffle-flattener": "^1.4.4",
+    "truffle-plugin-stdjsonin": "git+https://github.com/mhrsalehi/truffle-plugin-stdjsonin.git",
     "truffle-plugin-verify": "^0.5.15"
   },
   "dependencies": {

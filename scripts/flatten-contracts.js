@@ -170,6 +170,18 @@ const contractsToFlatten = [
   {
     path: 'contracts/child/ChildToken/ChildERC20Exit',
     fileName: 'ChildERC20Relay.sol'
+  },
+  {
+    path: 'contracts/child/ChildToken',
+    fileName: 'MDT_e.sol'
+  },
+  {
+    path: 'contracts/child/ChildToken',
+    fileName: 'MDT_t.sol'
+  },
+  {
+    path: 'contracts/root/RootToken',
+    fileName: 'MDT.sol'
   }
 ]
 
