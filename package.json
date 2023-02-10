@@ -16,6 +16,7 @@
     "migrate:5": "truffle migrate --network child --f 5 --to 5",
     "migrate:6": "truffle migrate --network child --f 6 --to 6",
     "migrate:7": "truffle migrate --network child --f 7 --to 7",
+    "migrate:dashboard": "truffle migrate --network dashboard --f 7 --to 7",
     "migrate:goerli:2": "truffle migrate --network mumbaiRoot --f 2 --to 2",
     "migrate:bor:3": "truffle migrate --network child --f 3 --to 3",
     "migrate:goerli:4": "truffle migrate --network mumbaiRoot --f 4 --to 4",
