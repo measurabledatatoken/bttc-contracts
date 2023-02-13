@@ -31,7 +31,9 @@
     "debug": "truffle debug",
     "artifacts": "node scripts/generate-artifacts.js",
     "flatten": "node scripts/flatten-contracts.js",
-    "test:ci": "scripts/run-test.sh"
+    "test:ci": "scripts/run-test.sh",
+    "tronbox": "tronbox",
+    "tronbox:migrate:8": "tronbox migrate --network main --f 8 --to 8"
   },
   "repository": {
     "type": "git",
@@ -82,6 +84,7 @@
     "moonwalker": "github:atvanguard/moonwalker#4c4592e2d6c1744fbcd9452cf0f00e9beb236b21",
     "nunjucks": "^3.2.1",
     "solium": "^1.2.5",
+    "tronbox": "^3.1.0",
     "truffle": "^5.4.15",
     "truffle-flattener": "^1.4.4",
     "truffle-plugin-stdjsonin": "git+https://github.com/mhrsalehi/truffle-plugin-stdjsonin.git",
