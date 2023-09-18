@@ -1,4 +1,4 @@
-pragma solidity 0.6.6;
+pragma solidity 0.6.8;
 
 import {IMintableERC20} from "../RootToken/IMintableERC20.sol";
 import {AccessControlMixin} from "../../common/AccessControlMixin.sol";

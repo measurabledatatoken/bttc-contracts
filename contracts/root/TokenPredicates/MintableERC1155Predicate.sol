@@ -1,4 +1,4 @@
-pragma solidity 0.6.6;
+pragma solidity 0.6.8;
 
 import {IMintableERC1155} from "../RootToken/IMintableERC1155.sol";
 import {

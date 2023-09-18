@@ -1,4 +1,4 @@
-pragma solidity 0.6.6;
+pragma solidity 0.6.8;
 
 import {ERC20} from "./ERC20.sol";
 import {AccessControlMixin} from "../../common/AccessControlMixin.sol";

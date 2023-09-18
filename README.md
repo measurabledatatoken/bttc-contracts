@@ -17,3 +17,13 @@ On BTTC:
 
 On TRON:
 1. TVoKC3ZhU7rcisPRFgunNwHVmSqfmiTB9m
+
+## Remarks
+To compile and deploy on TRON, we need to perform following steps to workaround `tronbox.js` errors at the moment:
+1. Find and replace `pragma solidity 0.6.6;` with `pragma solidity 0.6.8;`
+2. Rename `isContract` to `isContractTron` in following files:
+    `node_modules/@openzeppelin/contracts/utils/Address.sol`
+    `node_modules/@openzeppelin/contracts/token/ERC1155/ERC721.sol`
+    `node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol`
+
+    Reference: https://stackoverflow.com/questions/68597706/compile-of-openzeppelin-erc721-with-tron-and-tronbox-failing

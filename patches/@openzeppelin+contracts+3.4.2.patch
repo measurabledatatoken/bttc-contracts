@@ -1,0 +1,84 @@
+diff --git a/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol b/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol
+index eccc320..ba50aec 100644
+--- a/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol
++++ b/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol
+@@ -369,7 +369,7 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
+     )
+         private
+     {
+-        if (to.isContract()) {
++        if (to.isContractTron()) {
+             try IERC1155Receiver(to).onERC1155Received(operator, from, id, amount, data) returns (bytes4 response) {
+                 if (response != IERC1155Receiver(to).onERC1155Received.selector) {
+                     revert("ERC1155: ERC1155Receiver rejected tokens");
+@@ -392,7 +392,7 @@ contract ERC1155 is Context, ERC165, IERC1155, IERC1155MetadataURI {
+     )
+         private
+     {
+-        if (to.isContract()) {
++        if (to.isContractTron()) {
+             try IERC1155Receiver(to).onERC1155BatchReceived(operator, from, ids, amounts, data) returns (bytes4 response) {
+                 if (response != IERC1155Receiver(to).onERC1155BatchReceived.selector) {
+                     revert("ERC1155: ERC1155Receiver rejected tokens");
+diff --git a/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol b/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol
+index 7958fdf..ed292a3 100644
+--- a/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol
++++ b/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol
+@@ -435,7 +435,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable
+     function _checkOnERC721Received(address from, address to, uint256 tokenId, bytes memory _data)
+         private returns (bool)
+     {
+-        if (!to.isContract()) {
++        if (!to.isContractTron()) {
+             return true;
+         }
+         bytes memory returndata = to.functionCall(abi.encodeWithSelector(
+diff --git a/node_modules/@openzeppelin/contracts/utils/Address.sol b/node_modules/@openzeppelin/contracts/utils/Address.sol
+index 42a9dc1..87d1a2e 100644
+--- a/node_modules/@openzeppelin/contracts/utils/Address.sol
++++ b/node_modules/@openzeppelin/contracts/utils/Address.sol
+@@ -14,7 +14,7 @@ library Address {
+      * It is unsafe to assume that an address for which this function returns
+      * false is an externally-owned account (EOA) and not a contract.
+      *
+-     * Among others, `isContract` will return false for the following
++     * Among others, `isContractTron` will return false for the following
+      * types of addresses:
+      *
+      *  - an externally-owned account
+@@ -23,7 +23,7 @@ library Address {
+      *  - an address where a contract lived, but was destroyed
+      * ====
+      */
+-    function isContract(address account) internal view returns (bool) {
++    function isContractTron(address account) internal view returns (bool) {
+         // This method relies on extcodesize, which returns 0 for contracts in
+         // construction, since the code is only stored at the end of the
+         // constructor execution.
+@@ -113,7 +113,7 @@ library Address {
+      */
+     function functionCallWithValue(address target, bytes memory data, uint256 value, string memory errorMessage) internal returns (bytes memory) {
+         require(address(this).balance >= value, "Address: insufficient balance for call");
+-        require(isContract(target), "Address: call to non-contract");
++        require(isContractTron(target), "Address: call to non-contract");
+ 
+         // solhint-disable-next-line avoid-low-level-calls
+         (bool success, bytes memory returndata) = target.call{ value: value }(data);
+@@ -137,7 +137,7 @@ library Address {
+      * _Available since v3.3._
+      */
+     function functionStaticCall(address target, bytes memory data, string memory errorMessage) internal view returns (bytes memory) {
+-        require(isContract(target), "Address: static call to non-contract");
++        require(isContractTron(target), "Address: static call to non-contract");
+ 
+         // solhint-disable-next-line avoid-low-level-calls
+         (bool success, bytes memory returndata) = target.staticcall(data);
+@@ -161,7 +161,7 @@ library Address {
+      * _Available since v3.4._
+      */
+     function functionDelegateCall(address target, bytes memory data, string memory errorMessage) internal returns (bytes memory) {
+-        require(isContract(target), "Address: delegate call to non-contract");
++        require(isContractTron(target), "Address: delegate call to non-contract");
+ 
+         // solhint-disable-next-line avoid-low-level-calls
+         (bool success, bytes memory returndata) = target.delegatecall(data);

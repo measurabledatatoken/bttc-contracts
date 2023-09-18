@@ -1,7 +1,7 @@
 // This contract is not supposed to be used in production
 // It's strictly for testing purpose
 
-pragma solidity 0.6.6;
+pragma solidity 0.6.8;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {NativeMetaTransaction} from "../../common/NativeMetaTransaction.sol";
